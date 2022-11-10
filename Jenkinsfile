@@ -7,13 +7,13 @@ agent any
     stages { 
         stage ('Build') { 
             steps {
-                sh 'docker build $IMAGE_NAME:$IMAGE_TAG .'
+                bat 'docker build $IMAGE_NAME:$IMAGE_TAG .'
             }
         } 
     } 
     post {
         always {
-            sh 'docker logout'
+            bat 'docker logout'
         }
     }          
  }
